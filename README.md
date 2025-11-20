@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Col-Legit
+
+A gamified college application tracker that helps students manage their college applications with XP, streaks, and achievements.
+
+## Tech Stack
+
+- **Frontend**: Next.js 16 (App Router), TypeScript, Tailwind CSS
+- **UI Components**: shadcn/ui, Radix UI
+- **State Management**: TanStack Query
+- **Forms**: React Hook Form + Zod
+- **Backend**: Supabase (Auth, Database, Storage)
+- **Dev Tools**: ESLint, Prettier, TypeScript strict mode
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js 20+
+- npm, yarn, or pnpm
+- A Supabase project (create one at [supabase.com](https://supabase.com))
+
+### Installation
+
+1. Clone the repository and install dependencies:
+
+```bash
+npm install
+```
+
+2. Set up environment variables:
+
+```bash
+cp .env.example .env.local
+```
+
+Then edit `.env.local` and add your Supabase credentials:
+
+```
+NEXT_PUBLIC_SUPABASE_URL=your-project-url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
+```
+
+3. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── app/                    # Next.js app directory
+│   ├── (app)/             # Authenticated app routes
+│   ├── (marketing)/       # Public marketing pages
+│   └── layout.tsx         # Root layout with providers
+├── components/
+│   ├── features/          # Feature-specific components
+│   ├── providers/         # React context providers
+│   └── ui/                # shadcn/ui components
+├── lib/
+│   ├── supabase/          # Supabase client utilities
+│   ├── db/                # Database access functions
+│   └── gamification/      # XP, streaks, achievements
+├── types/                 # TypeScript type definitions
+└── hooks/                 # Custom React hooks
+```
 
-## Learn More
+## Development
 
-To learn more about Next.js, take a look at the following resources:
+### Available Scripts
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run start` - Start production server
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+- `npm run format:check` - Check code formatting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Code Standards
 
-## Deploy on Vercel
+- TypeScript strict mode is enabled
+- All code must pass ESLint and Prettier checks
+- Use async/await instead of promise chains
+- Follow the patterns established in CLAUDE.md
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Database Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+See `CLAUDE.md` for the complete data model. You'll need to create tables in Supabase for:
+
+- profiles
+- colleges
+- user_colleges
+- tasks
+- gamification_state
+- achievements
+- user_achievements
+
+## Contributing
+
+Please read `CLAUDE.md` for detailed guidelines on:
+
+- Architecture patterns
+- Coding standards
+- Gamification rules
+- UX principles
+
+## License
+
+MIT

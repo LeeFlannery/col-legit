@@ -1,0 +1,9 @@
+.next
+node_modules
+build
+out
+dist
+.cache
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
