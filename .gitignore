@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/node_modules/.ignored
 /.pnp
 .pnp.*
 .yarn/*
@@ -9,6 +10,7 @@
 !.yarn/plugins
 !.yarn/releases
 !.yarn/versions
+.pnpm-store
 
 # testing
 /coverage
@@ -29,6 +31,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
+
+# lock files (we use pnpm)
+package-lock.json
+yarn.lock
 
 # env files (can opt-in for committing if needed)
 .env*

@@ -16,7 +16,7 @@ A gamified college application tracker that helps students manage their college 
 ### Prerequisites
 
 - Node.js 20+
-- npm, yarn, or pnpm
+- pnpm (install with `npm install -g pnpm` or `corepack enable`)
 - A Supabase project (create one at [supabase.com](https://supabase.com))
 
 ### Installation
@@ -24,7 +24,7 @@ A gamified college application tracker that helps students manage their college 
 1. Clone the repository and install dependencies:
 
 ```bash
-npm install
+pnpm install
 ```
 
 2. Set up environment variables:
@@ -43,7 +43,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 3. Run the development server:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) to see the application.
@@ -71,12 +71,12 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 
 ### Available Scripts
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
-- `npm run format:check` - Check code formatting
+- `pnpm dev` - Start development server
+- `pnpm build` - Build for production
+- `pnpm start` - Start production server
+- `pnpm lint` - Run ESLint
+- `pnpm format` - Format code with Prettier
+- `pnpm format:check` - Check code formatting
 
 ### Code Standards
 
